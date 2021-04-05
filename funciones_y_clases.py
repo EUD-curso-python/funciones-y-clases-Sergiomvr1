@@ -1,30 +1,30 @@
 global1 = 34
 
-def cambiar_global():
-    '''Cambiar una variable global
+def cambiar_global(a):
+  global global1
+  global1 = a
 
+'''
+    Cambiar una variable global
     Esta función debe asignarle a la variable global `global1` el valor que se
     le pasa como único argumento posicional.
-    '''
-    pass
+'''
+pass
 
+#cambiar_global(2)
+#print(global1)
 
-def anio_bisiesto():
-    '''Responder si el entero pasado como argumento es un año bisiesto
-    
-    Para determinar si un año es bisiesto, se deben tener en cuenta las 
-    siguientes condiciones:
+def anio_bisiesto(b):
+  if b % 4 == 0 and (b % 100 != 0 or b % 400 == 0):
+    anio = True
+  else:
+    anio = False
+  return anio
 
-    - Si el año es divisible por 4 es bisiesto, a menos que:
-        - Si el año es divisible por 100 no es bisiesto a menos que:
-            - Si el año es divisible por 400 es bisiesto.
-
-    Retorna True o False
-    '''
-    pass
-
-def contar_valles():
-    r'''Contar el número de valles
+#b = anio_bisiesto(2020)
+#print(b)
+        
+'''Contar el número de valles
 
     Esta función debe recibir como argumento una lista de -1's, 0's y 1's, y lo 
     que representan son las subidas y las bajadas en una ruta de caminata. -1
@@ -40,8 +40,23 @@ def contar_valles():
     El objetivo de esta función es devolver el número de valles que estén 
     representados en la lista, que para el ejemplo que se acaba de mostrar es
     de 3 valles.
-    '''
-    pass
+'''    
+    
+def contar_valles(lista=list):
+  
+  for a in lista:
+    if a > -2 and a < 2:
+      valles = lista.count(0)
+    else:
+      valles = 0
+  return valles 
+
+
+lista1 = [-1,1,0,1,1,-1,0,0,1,-1,1,1,-1,-1,0,0,0]
+valles_0 = contar_valles(lista1)  
+print(valles_0)
+
+   
 
 def saltando_rocas():
     '''Mínimo número de saltos en las rocas

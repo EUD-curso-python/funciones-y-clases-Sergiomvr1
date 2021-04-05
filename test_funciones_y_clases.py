@@ -111,3 +111,4 @@ def test_Persona1(nombres, apellidos, fecha):
     except: raise Exception('Clase "{}" genera error'.format(class_name))
     assert_attr(ll, 'edad')
     assert ll.edad() == fn3(fecha), 'Clase {} no es correcta'.format(class_name)
+ 
